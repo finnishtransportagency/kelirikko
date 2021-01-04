@@ -1,0 +1,14 @@
+#
+# Directories
+#
+/.metadata
+/.settings
+/bin
+/target
+/doc
+#
+# Files
+#
+.classpath
+.project
+src/main/resources/kelirikko.properties

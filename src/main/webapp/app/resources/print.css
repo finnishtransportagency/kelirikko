@@ -1,0 +1,81 @@
+@import "arcgis.css";
+
+html, body {
+	height: 100%; 
+	width: 100%;
+	margin: 0; 
+	padding: 0;
+
+}
+
+body {
+	background-color:white; 
+	font-family: "Verdana", sans-serif
+}
+
+hr {
+	margin: 2px 0;
+}
+#header, #map, #layers, #features, hr {
+	margin: auto;
+	width: 660px;
+}
+#header, #map, #layers, #features {
+	
+}
+
+#header {
+	height: 90px;
+	font-size:16pt; 
+	text-align: left;
+	font-weight: bold;
+}
+
+#header img {	
+	height: 50px;
+	margin: 20px;
+}
+
+#header p, #layers p {
+	margin: 0;
+	line-height: 1.2em;
+}
+
+#map {
+	height: 550px !important;
+}
+#layers {
+	margin-top: 10px;
+	margin-bottom: 10px; 
+}
+
+#identifytable {
+	border-collapse:collapse;
+	width: 100%;
+}
+#featurestable {
+	margin: 10px auto;
+	font-size: 10px;
+	border-collapse:collapse;
+}
+#featurestable tr.odd {
+	background-color: #F8F8F8 ;
+}
+#featurestable tr.even {
+	background-color: #FFFFFF;	
+}
+#featurestable th, #identifytable th{
+	font-weight: bold;
+	color: #FFFFFF;
+	background-color:#00a079;
+}
+#featurestable th, #featurestable td {
+	border:1px solid black;
+	white-space: nowrap;
+	padding: 0 2px;
+}
+
+#identifytable th, #identifytable td {
+	border:1px solid black;
+	padding: 0 2px;
+}

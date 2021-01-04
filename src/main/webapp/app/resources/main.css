@@ -1,0 +1,107 @@
+@import "arcgis.css";
+
+html, body, #container {
+	height: 100%; 
+	width: 100%;
+	margin: 0; 
+	padding: 0;
+}
+html, body {
+	overflow: hidden;
+}
+body {
+	background-color:white; 
+	overflow:hidden;
+	font-family: "Verdana", sans-serif
+}
+#header {
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	margin:5px 5px 0px 5px;
+	padding-top: 10px;
+	padding-left: 10px;
+	background-color:white;        
+	font-size:16pt; 
+	text-align:left;
+	font-weight:normal;       
+	height:60px;
+	color:#0066cc;
+}
+#subheader {
+	font-size:small;
+	color: #cfcfcf;
+	text-align:right;
+	padding-right:20px;
+}
+#footer {
+	margin:2px;
+	padding: 2px;
+	background-color:white; 
+	color:#2a3537;
+	border: solid 2px #79663b;
+	font-size:10pt; 
+	text-align:center;
+	height: 30px;
+}
+#rightPane{
+	margin:3px;
+	padding:10px;
+	background-color:white;
+	color:#421b14;
+	border: solid 2px #79663b;
+	width:20%;
+}
+#leftPane{
+	margin:5px 0px 5px 5px;
+	padding:0px;
+	width:550px;
+	color:#4f81bd;
+	background-color:white;
+	border: cornflowerblue;
+	overflow:hidden;
+	font-size:10pt; 
+	text-align:Left;
+	font-weight:bold;
+}
+#map {
+	margin: 5px 5px 5px 0px;
+}
+.shadow {
+	/*slight shadow effect added for browsers that support this functionality*/
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	box-shadow: 8px 8px 16px #323834;
+	-webkit-box-shadow: 8px 8px 16px #323834;
+	-moz-box-shadow: 8px 8px 16px #323834;
+	-o-box-shadow: 8px 8px 16px #323834;
+}
+.nihilo .dijitAccordionText {
+	margin-left:2px;
+	margin-right:2px;
+}
+.nihilo .dijitAccordionTitle {
+	color:#4292C3;
+}
+.nihilo .dijitAccordionTitle-selected {
+	color:#3680AB;
+}
+.nihilo .dojoxGridHeader .dojoxGridCell   {
+	color:peru !important;
+}
+
+#identifytable {
+	border-collapse:collapse;
+	width: 100%;
+}
+#identifytable th {
+	font-weight: bold;
+	color: #FFFFFF;
+	background-color:#00a079;
+}
+#identifytable th, #identifytable td {
+	border:1px solid black;
+	white-space: nowrap;
+	padding: 0 2px;
+}

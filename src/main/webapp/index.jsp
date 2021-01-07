@@ -80,7 +80,8 @@
 							<img src="app/resources/images/olleet.png"/>
 							<label for="weightLimitPrevious">Voimassa olleet painorajoitukset vuonna</label>
 							<select id="weightLimitPreviousYear" name="weightLimitPreviousYear" data-dojo-type="dijit.form.ComboBox" style="width:80px;">
-								<option selected="selected">2020</option>
+								<option selected="selected">2021</option>
+								<option>2020</option>
 								<option>2019</option>
 								<option>2018</option>
 								<option>2017</option>

@@ -3,6 +3,7 @@ package fi.liikennevirasto.kelirikko;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Properties;
@@ -45,11 +46,12 @@ public class KelirikkoProperties {
 
     public KelirikkoProperties() {
     	
-    	// devel|test|prod
-    	String environment = "devel";
-    
+    	String environment;
+    	InetAddress ip;
+    	String hostname;
+        
    		logger.debug("Ladataan .properties tiedosto contextista");
-   		
+
    		InputStream in = Thread.currentThread().getContextClassLoader().getResourceAsStream("/kelirikko.properties");
     	if (in == null) {
         	logger.debug("Ei löytynyt. Ladataan .properties tiedosto war-paketista");
@@ -59,6 +61,17 @@ public class KelirikkoProperties {
             Properties prop = new Properties();
             prop.load(in);
 
+            ip = InetAddress.getLocalHost();
+            hostname = ip.getHostName();
+
+            if (hostname.equals(prop.getProperty("test.serverone")) || hostname.equals(prop.getProperty("test.servertwo"))) {
+            	environment = "test";
+            } else if (hostname.equals(prop.getProperty("prod.serverone")) || hostname.equals(prop.getProperty("prod.servertwo"))) {
+            	environment = "prod";
+            } else {
+            	environment = "devel";
+            }
+            
             String stage = System.getProperty("fi.liikennevirasto.kelirikko.KelirikkoProperties.stage", environment);
             if (stage.equals("test") || stage.equals("prod")) {
             	prop.setProperty("agsServiceUrl", prop.getProperty(stage + "." + "agsServiceUrl"));
@@ -77,7 +90,7 @@ public class KelirikkoProperties {
             logger.debug("Parametrit luettu. ");
         } catch (IOException e) {
             throw new IllegalArgumentException(e.getMessage());
-        }
+        } 
     }
 
     public String getProp(Arvo arvo) {
